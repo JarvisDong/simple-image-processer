@@ -2,11 +2,12 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void Usage(char *progname)
 {
     printf("Usage: %s command value\n\n", progname);
-    printf("Valid commands are:\tcos, sin, tan, exp, log\n");
+    printf("Valid commands are:\tcos, sin, tan, arccos, arcsin, arctan, exp, log\n");
 }
 int main(int argc, char *argv[])
 {
@@ -30,6 +31,12 @@ int main(int argc, char *argv[])
         mathFunction = exp330;
     else if (strcmp(argv[1], "log") == 0)
         mathFunction = log330;
+    else if (strcmp(argv[1], "arccos") == 0)
+        mathFunction = arccos330;
+    else if (strcmp(argv[1], "arcsin") == 0)
+        mathFunction = arcsin330;
+    else if (strcmp(argv[1], "arctan") == 0)
+        mathFunction = arctan330;
     else
         foundFunction = 0;
 
