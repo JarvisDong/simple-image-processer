@@ -1,5 +1,5 @@
 cli: ./cli/cli.c libmath330.a ./include/math330.h ./bin ./include ./lib
-	gcc ./cli/cli.c -I./include/ -L./library/libmath330.a -o ./bin/cli
+	gcc ./cli/cli.c -I./include/ -L./lib/ -lmath330 -lm -o ./bin/cli
 
 libmath330.a: ./lib ./trig/cos330.o ./trig/sin330.o ./trig/tan330.o ./trig/arccos.o ./trig/arcsin.o ./trig/arctan.o ./exp/exp330.o ./exp/log330.o
 	ar r libmath330.a sin330.o cos330.o tan330.o arccos.o arcsin.o arctan.o exp330.o log330.o

@@ -32,11 +32,11 @@ int main(int argc, char *argv[])
     else if (strcmp(argv[1], "log") == 0)
         mathFunction = log330;
     else if (strcmp(argv[1], "arccos") == 0)
-        mathFunction = arccos330;
+        mathFunction = arccos;
     else if (strcmp(argv[1], "arcsin") == 0)
-        mathFunction = arcsin330;
+        mathFunction = arcsin;
     else if (strcmp(argv[1], "arctan") == 0)
-        mathFunction = arctan330;
+        mathFunction = arctan;
     else
         foundFunction = 0;
 

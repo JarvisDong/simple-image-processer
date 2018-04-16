@@ -1,7 +1,7 @@
 #include <math330.h>
 #include <math.h>
 
-double arctan330(double angle)
+double arctan(double angle)
 {
     return atan(angle);
 }
