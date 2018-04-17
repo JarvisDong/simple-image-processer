@@ -7,13 +7,13 @@ libmath330.a: ./lib ./trig/cos330.o ./trig/sin330.o ./trig/tan330.o ./trig/arcco
 	rm cos330.o sin330.o tan330.o arccos.o arcsin.o arctan.o exp330.o log330.o
 
 ./lib:
-	mkdir ./lib
+	mkdir -p ./lib
 
 ./bin:
-	mkdir ./bin
+	mkdir -p ./bin
 
 ./include:
-	mkdir ./include
+	mkdir -p ./include
 
 ./include/math330.h: ./math330.h ./include
 	cp ./math330.h ./include/math330.h
