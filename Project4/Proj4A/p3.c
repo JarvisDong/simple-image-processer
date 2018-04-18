@@ -1,4 +1,4 @@
-// The author believes it has <3> memory errors
+// The author believes it has <4> memory errors
 #include <stdio.h>
 #include <stdlib.h>
 
