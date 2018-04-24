@@ -2,24 +2,22 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]){
-	char *buffer;
-	int buffer_size = 25;
+	int *buffer;
+	int buffersize=25;
 	FILE *fin;
 	FILE *fout;
 
-	if (argc != 3) {
-		printf("Usage: %s <file1> <file2>\n", argv[0]);
-		exit(EXIT_FAILURE);
+	fin = fopen(argv[1], "r");
+	fout = fopen(argv[2], "w");
+
+	buffer = (int*)malloc(buffersize * sizeof(int));
+	for (int i=0; i<5; i++) {
+		fread(buffer, 5*sizeof(int), 1, fin);
+		fseek(fin, 5*sizeof(int), SEEK_CUR);	
+		for (int j=0; j<5; j++) {
+			fprintf(fout, "%d\n", buffer[j]);
+		}
 	}
-
-	fin = fopen(argv[1], "rb");
-
-	buffer = malloc(buffer_size);
-	fread(buffer, buffer_size, 1, fin);
-	
-	fout = fopen(argv[2], "wb");
-	fwrite(buffer, sizeof(buffer), buffer_size, fout);
-
 	fclose(fin);
 	fclose(fout);
 	free(buffer);
