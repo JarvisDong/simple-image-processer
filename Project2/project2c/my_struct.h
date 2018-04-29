@@ -16,7 +16,7 @@ typedef struct
 	double pt2X;
 	double minY;
 	double maxY;
-	
+
 } Triangle; //struct definition for Triangle
 
 
