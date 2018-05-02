@@ -15,7 +15,8 @@ typedef struct {
 
 } Image;
 
-Image *ReadImage(char *filename) {
+Image *
+ReadImage(char *filename) {
 	char magicNum[128];
 	int width, height, maxval;
 
@@ -25,7 +26,7 @@ Image *ReadImage(char *filename) {
  	Image *image = (Image *) malloc(sizeof(Image));
  	image->width = width;
  	image->height = height;
- 	image->pixel = (Pixel *) malloc(width*height*sizeof(Pixel));
+ 	image->pixel = (Pixel *) malloc((image->width)*(image->height)*sizeof(Pixel));
  	fread(image->pixel, sizeof(Pixel), height*width, f_in);
  	fclose(f_in);
  	return image;
@@ -37,11 +38,12 @@ void WriteImage(Image *img, char *filename)
 	FILE *f_out;
 	f_out = fopen(filename, "w");
 	fprintf(f_out, "P6\n%d %d\n%d\n", img->width, img->height, 255);
-	fwrite(img->pixel, sizeof(Pixel), img->height*img->width, f_out);
+	fwrite(img->pixel, sizeof(Pixel), (img->height)*(img->width), f_out);
 	fclose(f_out);
 }
 
-Image *YellowDiagonal(Image *input) {	
+Image *
+YellowDiagonal(Image *input) {	
 	int w, h;
 	w = input->width;
 	h = input->height;
@@ -58,6 +60,9 @@ Image *YellowDiagonal(Image *input) {
 				(copy->pixel)[j*w+i].r = 255;
 				(copy->pixel)[j*w+i].g = 255;
 				(copy->pixel)[j*w+i].b = 0;
+			} //draw a yellow diagonal line
+			else {
+				(copy->pixel)[j*w+i] = input->pixel[j*w+i]; //fill the rest part
 			}
 		}
 	}
