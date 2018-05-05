@@ -40,18 +40,18 @@ typedef union {
 struct Shape;
 
 typedef struct {
-	double *GetArea;
-	double *GetBoundingBox;
+	double (*GetArea)(struct Shape *);
+	void (*GetBoundingBox)(struct Shape *, double *bbox);
 } FunctionTable;
 
 typedef enum {
-	circle,
-	rectangle,
-	triangle
+	CIRCLE,
+	RECTANGLE,
+	TRIANGLE
 } ShapeType;
 
-typedef struct {
+struct Shape {
 	ShapeUnion su;
 	ShapeType st;
 	FunctionTable ft;
-} Shape;
+};
