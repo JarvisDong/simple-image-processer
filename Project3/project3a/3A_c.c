@@ -23,10 +23,10 @@ ReadImage(char *filename) {
 	FILE *f_in;
 	f_in = fopen(filename, "r");
  	fscanf(f_in, "%s\n%d %d\n%d\n", magicNum, &width, &height, &maxval); //magicNum = "P6", width = 1786, height = 1344, maxval = 255
- 	Image *image = (Image *) malloc(sizeof(Image));
+ 	Image *image = (Image *) malloc(sizeof(Image)); //need a free()
  	image->width = width;
  	image->height = height;
- 	image->pixel = (Pixel *) malloc((image->width)*(image->height)*sizeof(Pixel));
+ 	image->pixel = (Pixel *) malloc((image->width)*(image->height)*sizeof(Pixel)); //need a free() *2
  	fread(image->pixel, sizeof(Pixel), height*width, f_in);
  	fclose(f_in);
  	return image;
@@ -49,10 +49,10 @@ YellowDiagonal(Image *input) {
 	h = input->height;
 
 	//make a copy of original image
-	Image *copy = (Image *) malloc(sizeof(Image));
+	Image *copy = (Image *) malloc(sizeof(Image)); //need a free() *3
 	copy->width = w;
 	copy->height = h;
-	copy->pixel = (Pixel *) malloc(w*h*sizeof(Pixel));
+	copy->pixel = (Pixel *) malloc(w*h*sizeof(Pixel));//need a free() *4
 
 	for (int i=0; i<w; i++) {
 		for (int j=0; j<h; j++) {

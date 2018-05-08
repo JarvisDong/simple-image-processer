@@ -4,7 +4,7 @@
 Image::Image(void) {
 	width = 0;
 	height = 0;
-	pixel = new Pixel[width*height];
+	pixel = NULL;
 }
 
 //parameterized constructor
@@ -18,10 +18,10 @@ Image::Image(int w, int h, Pixel *pixel) {
 Image::Image(Image &img) {
 	width = img.width;
 	height = img.height;
-	pixel = img.pixel;
+	pixel = img.pixel; //TODO:something extremely wrong here 
 }
 
-void ResetSize(int width, int height) {
-	width = 0;
-	height = 0;
+void ResetSize(int w, int h, Pixel *pixel) {
+	if (pixel != NULL) {pixel = new Pixel[w*h];}
+	else {width = 0;height = 0;}
 }

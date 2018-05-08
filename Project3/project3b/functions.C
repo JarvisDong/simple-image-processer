@@ -10,7 +10,7 @@ void ReadImage(char *filename, Image &output) {
  	fscanf(f_in, "%s\n%d %d\n%d\n", magicNum, &w, &h, &maxval);
   	output.width = w;
   	output.height = h;
- 	output.pixel = (Pixel*)malloc(w*h);
+ 	output.pixel = new Pixel[w*h];
  	fread(output.pixel, sizeof(Pixel), w*h, f_in);
  	fclose(f_in);
 };
