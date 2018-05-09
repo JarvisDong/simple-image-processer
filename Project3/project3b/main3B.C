@@ -12,6 +12,6 @@ int main(int argc, char *argv[])
     HalfSize(img4, img5);
     LeftRightCombine(img5, img2, img6);
     TopBottomCombine(img6, img3, img7);
-    // Blend(img7, img, 0.795, img8);
-    WriteImage(argv[2], img7);
+    Blend(img7, img, 0.795, img8);
+    WriteImage(argv[2], img8);
 }

@@ -30,5 +30,5 @@ Image::ResetSize(int w, int h) {
 		height = h;
 		pixel = new Pixel[w*h];
 	}
-	//else: backup for further usage
+	//TODO: else:for further usage
 }
