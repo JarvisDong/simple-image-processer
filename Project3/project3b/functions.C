@@ -16,48 +16,48 @@ void ReadImage(char *filename, Image &output) {
 };
 
 void WriteImage(char *filename, Image &img) {
-	FILE *f_out = fopen(filename, "r");
+	FILE *f_out = fopen(filename, "w");
 	fprintf(f_out, "P6\n%d %d\n%d\n", img.width, img.height, 255);
-	fwrite(img.pixel, sizeof(Pixel), img.height * img.width, f_out);
+	fwrite(img.pixel, sizeof(Pixel), (img.height) * (img.width), f_out);
 	fclose(f_out);
 };
 
 void HalfSize(Image &input, Image &output) {
-	output.width = input.width / 2;
-	output.height = input.height / 2;
-	output.pixel = new Pixel[output.width * output.height];
+	output.ResetSize(input.width / 2, input.height / 2);
 	for (int i = 0; i < output.width; i++) {
 		for (int j = 0; j < output.height; j++) {
-			output.pixel[j*output.width+i] = input.pixel[2*(j*output.width+i)];
+			output.pixel[j*output.width+i] = input.pixel[2*(j*input.width+i)];
 		}
 	}
 };
 
-// void LeftRightCombine(Image &leftInput, Image &rightInput, Image &output) {
-// 	// assume leftInput.height = rightInput.height
-// 	output.height = leftInput.height;
-// 	output.width = leftInput.width + rightInput.width;
-// 	output.pixel = new Pixel[output.height * output.width];
-// 	for (int i = 0; i < output.width; i++) {
-// 		for (int j = 0; i < output.height; j++) {
-// 			output.pixel[j*output.width+i] = 
-// 		}
-// 	}
-// };
+void LeftRightCombine(Image &leftInput, Image &rightInput, Image &output) {
+	// assume leftInput.height = rightInput.height
+	output.ResetSize(leftInput.width + rightInput.width, leftInput.height);
+	for (int i = 0; i < output.height; i++) {
+		for (int j = 0; j < output.width / 2; j++) {
+			output.pixel[i*output.width+j] = leftInput.pixel[(i*leftInput.width+j)];
+		}
+		for (int k = output.width / 2; k < output.width; k++) {
+				output.pixel[i*output.width+k] = rightInput.pixel[i*rightInput.width+k];
+		}
+	}
+};
 
-// void TopBottomCombine(Image &topInput, Image &bottomInput, Image &output) {
-// 	//assume topInput.width = bottomInput.width
-// 	output.width = leftInput.width;
-// 	output.height = topInput.height + bottomInput.height;
-// 	output.pixel = new Pixel[output.width * output.height];
-// 	for (int i = 0; i < output.width; i++) {
-// 		for (int j = 0; i < output.height; j++) {
-// 			output.pixel[j*output.width+i] = 
-
-// };
+void TopBottomCombine(Image &topInput, Image &bottomInput, Image &output) {
+	//assume topInput.width = bottomInput.width
+	output.ResetSize(topInput.width, topInput.height + bottomInput.height);
+	for (int i = 0; i < output.width; i++) {
+		for (int j = 0; j < output.height / 2; j++) {
+			output.pixel[j*output.width+i] = topInput.pixel[(j*topInput.width+i)];
+		}
+		for (int k = output.height / 2; k < output.height; k++) {
+				output.pixel[k*output.width+i] = bottomInput.pixel[(k*bottomInput.width+i)];
+		}
+	}
+};
 
 // void Blend(Image &input1, Image &input2, double factor, Image &output) {
-// 	output.width = input1.width;
-// 	output.height = input1.height;
-// 	output.pixel = new Pixel[output.width * output.height];
+// 	output.ResetSize(input1.width, input1.height, new Pixel[input1.width * input1.height]);
 // };
+

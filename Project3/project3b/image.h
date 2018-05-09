@@ -1,7 +1,7 @@
 #ifndef PIXEL_H
 #define PIXEL_H
 
-struct Pixel {
+struct Pixel{
 	unsigned char r;
 	unsigned char g;
 	unsigned char b;
@@ -19,6 +19,6 @@ struct Image {
 		Image(void);
 		Image(int width, int height, Pixel *pixel);
 		Image(Image &);
-	void ResetSize();
+	void ResetSize(int w, int h);
 };
 #endif
