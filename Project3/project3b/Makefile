@@ -1,5 +1,6 @@
 prog: main3B.o functions.o image.o
 	g++ -o proj3B main3B.o functions.o image.o
+	rm -f *.o
 
 main3B.o: main3B.C functions.h image.h
 	g++ -c -I. main3B.C

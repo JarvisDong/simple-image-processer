@@ -36,11 +36,11 @@ void LeftRightCombine(Image &leftInput, Image &rightInput, Image &output) {
 	output.ResetSize(leftInput.width + rightInput.width, leftInput.height);
 
 	for (int i = 0; i < output.height; i++) {
-		for (int j = 0; j < output.width / 2; j++) {
+		for (int j = 0; j < leftInput.width; j++) {
 			output.pixel[i*output.width+j] = leftInput.pixel[i*leftInput.width+j];
 		}
-		for (int k = output.width / 2; k < output.width; k++) {
-			output.pixel[i*output.width+k] = rightInput.pixel[i*rightInput.width+k];
+		for (int k = leftInput.width; k < output.width; k++) {
+			output.pixel[i*output.width+k] = rightInput.pixel[i*rightInput.width+k-leftInput.width];
 		}
 	}
 };

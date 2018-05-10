@@ -19,7 +19,12 @@ Image::Image(int w, int h, Pixel *pixel) {
 Image::Image(Image &img) {
 	width = img.width;
 	height = img.height;
-	//TODO: pixel = img.pixel;
+	pixel = new Pixel[width*height];
+	for (int i=0; i < width; i++) {
+		for (int j = 0; j < height; j++) {
+			pixel[j*width+i] = img.pixel[j*width+i];
+		}
+	}
 }
 
 void
