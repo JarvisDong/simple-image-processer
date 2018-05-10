@@ -50,13 +50,13 @@ void TopBottomCombine(Image &topInput, Image &bottomInput, Image &output) {
 	output.ResetSize(topInput.width, topInput.height + bottomInput.height);
 
 	for (int i = 0; i < output.width; i++) {
-		for (int j = 0; j < output.height / 2; j++) {
+		for (int j = 0; j < output.height - topInput.height; j++) {
 			output.pixel[j*output.width+i] = topInput.pixel[j*topInput.width+i];
 		}
 	}
 	for (int i = 0; i < output.width; i++){
-		for (int j = output.height / 2; j < output.height; j++) {
-			output.pixel[j*output.width+i] = bottomInput.pixel[(j-output.height/2)*bottomInput.width+i];
+		for (int j = topInput.height; j < output.height; j++) {
+			output.pixel[j*output.width+i] = bottomInput.pixel[(j-output.height+topInput.height)*bottomInput.width+i];
 		}
 	}
 };
