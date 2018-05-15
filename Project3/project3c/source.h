@@ -3,13 +3,12 @@
 class Source {
 public:
 	Source(void);
-	~Source();
 	
 private:
 	Image image;
 
 public:
-	virtual void Execute(void) = 0;
+	virtual void Execute(void);
 	Pixel getOutput();
 }
 #endif

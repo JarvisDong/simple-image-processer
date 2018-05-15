@@ -5,6 +5,8 @@ Source::Source(void) {
 	image = NULL;
 }
 
-Source::~Source() {
-	delete image;
+virtual void Execute(void) = 0;
+
+Pixel getOutput() {
+	return image.pixel;
 }
