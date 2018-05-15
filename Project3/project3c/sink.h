@@ -1,15 +1,16 @@
+#include <image.h>
+
 #ifndef SINK_H
 #define SINK_H
 class Sink {
 public:
 	Sink(void);
-	virtual ~Sink();
-
-private:
-	Image *image1;
-	Image *image2;
+protected:
+	Image *sink_image;
+	Image *sink_image2;
 public:
-	void setInput(Image *img);
-	void setInput2(Image *img);
-}
+	void SetInput(Image *img) {sink_image = img;};
+	void SetInput2(Image *img) {sink_image2 = img;};
+};
+
 #endif

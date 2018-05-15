@@ -27,10 +27,12 @@ public:
 	//getter
 	int getWidth();
 	int getHeight();
-	Pixel getPixel();
+	Pixel* getPixel();
 	//setter
 	void setWidth(int w);
 	void setHeight(int h);
 	void setPixel(Pixel *px);
 };
+
+
 #endif

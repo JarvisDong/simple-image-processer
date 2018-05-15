@@ -32,27 +32,33 @@ Image::~Image() {
 	delete [] pixel;
 }
 
-int getWidth() {
+int
+Image::getWidth() {
 	return width;
 }
 
-int getHeight() {
+int
+Image::getHeight() {
 	return height;
 }
 
-Pixel getPixel() {
+Pixel *
+Image::getPixel() {
 	return pixel;
 }
 
-void setWidth(int w) {
+void
+Image::setWidth(int w) {
 	width = w;
 }
 
-void setHeight(int h) {
+void
+Image::setHeight(int h) {
 	height = h;
 };
 
-void setPixel(Pixel *px) {
+void
+Image::setPixel(Pixel *px) {
 	for (int i=0; i<width; i++) {
 		for (int j=0; j<height; j++) {
 			pixel[j*width+i] = px[j*width+i];

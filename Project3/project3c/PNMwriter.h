@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <sink.h>
 
 #ifndef PNMWRITER_H
 #define PNMWRITER_H
-class PNMwriter : Sink {
+class PNMwriter : public Sink {
 public:
-	PNMwriter(void);
-	void Write(FILE *filename);
-}
+	PNMwriter(char *filename);
+};
+
 #endif

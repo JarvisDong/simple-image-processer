@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "pnmreader.h": "c",
+        "filter.h": "c"
+    }
+}
