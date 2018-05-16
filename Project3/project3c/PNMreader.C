@@ -1,7 +1,16 @@
 #include <PNMreader.h>
 #include <stdio.h>
+#include <string.h>
 
-PNMreader::PNMreader(char *filename) {
+PNMreader::PNMreader(char *f) {
+	// make a string copy
+	filename = new char[strlen(f)+1];
+	int len = strlen(f);
+	for (int i=0; i<len; i++) {
+		filename[i] = f[i];
+	}
+	filename[len] = "\0";
+
 	char magicNum[128];
 	int w, h, maxval;
 	FILE *f_in = fopen(filename, "r");
@@ -11,7 +20,7 @@ PNMreader::PNMreader(char *filename) {
 }
 
 PNMreader::~PNMreader() {
-	delete [] source_image.getPixel();
+	delete [] filename;
 }
 
 void

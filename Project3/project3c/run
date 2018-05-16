@@ -1,0 +1,2 @@
+./proj3C 3C_input.pnm out.pnm
+diff 3C_output.pnm out.pnm 

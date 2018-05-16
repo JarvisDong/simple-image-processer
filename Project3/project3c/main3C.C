@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     LRCombine lrcombine2;
     TBCombine tbcombine1;
     TBCombine tbcombine2;
-    Blender  blender;
+    Blender blender;
     blender.SetFactor(0.795);
 
     shrinker1.SetInput(reader.GetOutput());

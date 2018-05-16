@@ -5,8 +5,10 @@
 #define PNMREADER_H
 class PNMreader : public Source {
 public:
-	PNMreader(char *filename);
+	PNMreader(char *f);
 	~PNMreader();
 	virtual void Execute();
+private:
+	char *f;
 };
 #endif

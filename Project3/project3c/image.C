@@ -28,9 +28,7 @@ Image::Image(Image &img) {
 }
 
 //destructor
-Image::~Image() {
-	delete [] pixel;
-}
+Image::~Image() {if (pixel != NULL) {delete [] pixel;}}
 
 int
 Image::getWidth() {
