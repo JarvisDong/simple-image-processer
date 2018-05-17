@@ -3,9 +3,9 @@
 
 #ifndef PNMWRITER_H
 #define PNMWRITER_H
-class PNMwriter : public Sink {
+class PNMwriterCPP : public Sink {
 public:
-	PNMwriter(void);
+	PNMwriterCPP(void);
 
 public:
 	void Write(char *filename);

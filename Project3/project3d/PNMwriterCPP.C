@@ -6,10 +6,10 @@
 
 using namespace std;
 
-PNMwriter::PNMwriter(void) {;}
+PNMwriterCPP::PNMwriterCPP(void) {;}
 
 void
-PNMwriter::Write(char *filename) {
+PNMwriterCPP::Write(char *filename) {
     int sink_image_width = sink_image->getWidth();
     int sink_image_height = sink_image->getHeight();
     Pixel *sink_image_pixel = sink_image->getPixel();

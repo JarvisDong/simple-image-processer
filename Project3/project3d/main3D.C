@@ -3,12 +3,12 @@
 #include <source.h>
 #include <sink.h>
 #include <PNMreaderCPP.h>
-#include <PNMwriter.h>
+#include <PNMwriterCPP.h>
 
 int main(int argc, char *argv[])
 {
     PNMreaderCPP reader(argv[1]);
-    PNMwriter writer;
+    PNMwriterCPP writer;
     Shrinker shrinker1;
     Shrinker shrinker2;
     LRCombine lrcombine1;

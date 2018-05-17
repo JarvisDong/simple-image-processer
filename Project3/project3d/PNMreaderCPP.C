@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 PNMreaderCPP::PNMreaderCPP(char *f) {
 	// make a string copy
 	filename = new char[strlen(f)+1];
