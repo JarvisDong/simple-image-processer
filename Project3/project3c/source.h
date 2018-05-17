@@ -11,7 +11,7 @@ protected:
 
 public:
 	virtual void Execute(void) = 0;
-	Image* GetOutput() {return &source_image;};
+	Image* GetOutput();
 };
 
 #endif

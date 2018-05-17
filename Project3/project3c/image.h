@@ -2,6 +2,7 @@
 #define PIXEL_H
 
 struct Pixel{
+public:
 	unsigned char r, g, b;
 };
 

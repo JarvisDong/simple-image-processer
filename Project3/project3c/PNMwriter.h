@@ -5,7 +5,10 @@
 #define PNMWRITER_H
 class PNMwriter : public Sink {
 public:
-	PNMwriter(char *filename);
+	PNMwriter(void);
+
+public:
+	void Write(char *filename);
 };
 
 #endif

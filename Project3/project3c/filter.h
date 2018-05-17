@@ -7,7 +7,6 @@
 class Filter : public Sink, public Source {
 public:
 	Filter(void);
-	void Execute(void);
 };
 #endif
 
@@ -45,8 +44,7 @@ public:
 class Blender : public Filter
 {
 public:
-	Blender(void);
-
+	Blender();
 protected:
 	double factor, factor2;
 public:

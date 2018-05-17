@@ -9,6 +9,6 @@ public:
 	~PNMreader();
 	virtual void Execute();
 private:
-	char *f;
+	char *filename;
 };
 #endif

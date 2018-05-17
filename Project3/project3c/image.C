@@ -30,30 +30,15 @@ Image::Image(Image &img) {
 //destructor
 Image::~Image() {if (pixel != NULL) {delete [] pixel;}}
 
-int
-Image::getWidth() {
-	return width;
-}
+int Image::getWidth() {return width;}
 
-int
-Image::getHeight() {
-	return height;
-}
+int Image::getHeight() {return height;}
 
-Pixel *
-Image::getPixel() {
-	return pixel;
-}
+Pixel *Image::getPixel() {return pixel;}
 
-void
-Image::setWidth(int w) {
-	width = w;
-}
+void Image::setWidth(int w) {width = w;}
 
-void
-Image::setHeight(int h) {
-	height = h;
-};
+void Image::setHeight(int h) {height = h;};
 
 void
 Image::setPixel(Pixel *px) {
@@ -63,7 +48,6 @@ Image::setPixel(Pixel *px) {
 		}
 	}
 }
-
 
 void
 Image::ResetSize(int w, int h) {

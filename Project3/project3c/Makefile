@@ -2,10 +2,10 @@ SRC=main3C.C image.C sink.C source.C PNMreader.C PNMwriter.C filter.C
 OBJ=$(SRC:.C=.o)
 
 prog: $(OBJ)
-	g++ $(OBJ) -o proj3C
+	g++ $(OBJ) -g -o proj3C
 
 .C.o: $<
-	g++ -I. -c $<
+	g++ -I. -c -g $<
 
 clean:
 	rm *.o proj3C
