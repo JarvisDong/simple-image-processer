@@ -7,8 +7,8 @@
 
 int main(int argc, char *argv[])
 {
-    PNMreader reader(argv[1]);
-    PNMwriter writer;
+    PNMreaderCPP reader(argv[1]);
+    PNMwriterCPP writer;
     Shrinker shrinker1;
     Shrinker shrinker2;
     LRCombine lrcombine1;
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     TBCombine tbcombine1;
     TBCombine tbcombine2;
     Blender  blender;
-    blender.SetFactor(0.8);
+    blender.SetFactor(0.795);
 
     shrinker1.SetInput(reader.GetOutput());
 
