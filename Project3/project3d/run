@@ -1,0 +1,2 @@
+./proj3D 3B_input.pnm out.pnm
+diff out.pnm 3B_out.pnm
