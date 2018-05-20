@@ -8,9 +8,10 @@ public:
 	
 protected:
 	Image source_image;
+	virtual void Execute(void) = 0;
 
 public:
-	virtual void Execute(void) = 0;
+	virtual void Update(void) = 0;
 	Image* GetOutput();
 };
 

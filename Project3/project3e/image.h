@@ -11,6 +11,7 @@ public:
 #ifndef IMAGE_H
 #define IMAGE_H
 
+class Source;
 class Image {
 public:
 	Image(void);
@@ -22,6 +23,7 @@ private:
 	int width;
 	int height;
 	Pixel *pixel;
+	Source *source;
 	
 public:
 	void ResetSize(int w, int h);
@@ -33,6 +35,7 @@ public:
 	void setWidth(int w);
 	void setHeight(int h);
 	void setPixel(Pixel *px);
+	void setSource(Source *src);
 };
 
 

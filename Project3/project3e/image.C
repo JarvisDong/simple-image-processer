@@ -1,4 +1,5 @@
 #include <image.h>
+#include <source.h>
 #define NULL __null
 
 //default constructor
@@ -57,4 +58,8 @@ Image::ResetSize(int w, int h) {
 		height = h;
 		pixel = new Pixel[w*h];
 	}
+}
+
+void Image::setSource(Source *src){
+	source = src;
 }
