@@ -36,6 +36,7 @@ public:
 	void setHeight(int h);
 	void setPixel(Pixel *px);
 	void setSource(Source *src);
+	void Update(void);
 };
 
 

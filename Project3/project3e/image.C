@@ -60,6 +60,14 @@ Image::ResetSize(int w, int h) {
 	}
 }
 
-void Image::setSource(Source *src){
+void
+Image::setSource(Source *src){
 	source = src;
+}
+
+void
+Image::Update(void) {
+	if (source != NULL) {
+		source -> Update();
+	}
 }

@@ -1,7 +1,9 @@
 #include <source.h>
 #include <image.h>
 
-Source::Source(void) {;}
+Source::Source() {
+    source_image.setSource(this);
+}
 
 Image*
 Source::GetOutput() {return &source_image;};

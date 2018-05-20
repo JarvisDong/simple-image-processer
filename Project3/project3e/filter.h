@@ -7,6 +7,7 @@
 class Filter : public Sink, public Source {
 public:
 	Filter(void);
+	void Update(void);
 };
 #endif
 
