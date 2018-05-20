@@ -1,7 +1,17 @@
 #include <filter.h>
 #include <iostream>
 
-Filter::Filter(void) {;}
+void
+Filter::Update() {
+	if (sink_image != NULL) {
+		sink_image->Update();
+		Execute();
+	}
+	if (sink_image2 != NULL) {
+		sink_image2->Update();
+		Execute();
+	}
+}
 
 Shrinker::Shrinker(void) {;}
 

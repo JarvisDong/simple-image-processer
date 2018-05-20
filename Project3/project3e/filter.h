@@ -5,8 +5,6 @@
 #ifndef FILTER_H
 #define FILTER_H
 class Filter : public Sink, public Source {
-public:
-	Filter(void);
 	void Update(void);
 };
 #endif
