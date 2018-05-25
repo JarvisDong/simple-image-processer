@@ -10,7 +10,7 @@
             },
             "includePath": [
                 "${workspaceFolder}",
-                "${workspaceFolder}/project3d"
+                "${workspaceFolder}/project3e"
             ],
             "defines": [],
             "macFrameworkPath": [
