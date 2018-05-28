@@ -9,8 +9,10 @@
                 "limitSymbolsToIncludedHeaders": true
             },
             "includePath": [
+                "/usr/include/",
                 "${workspaceFolder}",
-                "${workspaceFolder}/project3e"
+                "${workspaceFolder}/project3e",
+                "${workspaceFolder}/project3f"
             ],
             "defines": [],
             "macFrameworkPath": [

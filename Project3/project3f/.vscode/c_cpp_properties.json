@@ -9,8 +9,7 @@
                 "limitSymbolsToIncludedHeaders": true
             },
             "includePath": [
-                "${workspaceFolder}",
-                "${workspaceFolder}/project3f"
+                "${workspaceFolder}"
             ],
             "defines": [],
             "macFrameworkPath": [
