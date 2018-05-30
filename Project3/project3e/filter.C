@@ -1,13 +1,22 @@
 #include <filter.h>
 #include <iostream>
+#include <stdlib.h>
 
 void
 Filter::Update() {
-	if (sink_image != NULL) {
+	if (sink_image == NULL) {
+		cerr << "no input1 to filter" << endl;
+		exit(EXIT_FAILURE);
+	}
+	else {
 		sink_image->Update();
 		Execute();
 	}
-	if (sink_image2 != NULL) {
+	if (sink_image2 == NULL) {
+		cerr << "no input2 to filter" << endl;
+		exit(EXIT_FAILURE);
+	}
+	else {
 		sink_image2->Update();
 		Execute();
 	}
@@ -28,6 +37,7 @@ Shrinker::Execute() {
 	for (int i = 0; i < source_image_height; i++) {
 		for (int j = 0; j < source_image_width; j++) {
 			source_image_pixel[i*source_image_width+j] = sink_image_pixel[2*(i*sink_image_width+j)];
+			//source_image.setPixel(sink_image_pixel);
 		}
 	}
 }

@@ -53,11 +53,10 @@ Image::setPixel(Pixel *px) {
 void
 Image::ResetSize(int w, int h) {
 	// for combine blend and half functions 
-	if (pixel == NULL) {
-		width = w;
-		height = h;
-		pixel = new Pixel[w*h];
-	}
+	if (pixel != NULL) {delete [] pixel;}
+	width = w;
+	height = h;
+	pixel = new Pixel[w*h];
 }
 
 void

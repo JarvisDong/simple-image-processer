@@ -5,7 +5,6 @@ struct Pixel{
 public:
 	unsigned char r, g, b;
 };
-
 #endif
 
 #ifndef IMAGE_H
@@ -38,6 +37,4 @@ public:
 	void setSource(Source *src);
 	void Update(void);
 };
-
-
 #endif
