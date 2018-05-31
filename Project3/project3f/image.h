@@ -5,7 +5,6 @@ struct Pixel{
 public:
 	unsigned char r, g, b;
 };
-
 #endif
 
 #ifndef IMAGE_H
@@ -28,16 +27,14 @@ private:
 public:
 	void ResetSize(int w, int h);
 	//getter
-	int getWidth();
-	int getHeight();
-	Pixel* getPixel();
+	int getWidth() const;
+	int getHeight() const;
+	Pixel* getPixel() const;
 	//setter
 	void setWidth(int w);
 	void setHeight(int h);
 	void setPixel(Pixel *px);
 	void setSource(Source *src);
-	void Update(void);
+	void Update(void) const;
 };
-
-
 #endif

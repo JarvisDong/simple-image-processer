@@ -31,15 +31,17 @@ Image::Image(Image &img) {
 //destructor
 Image::~Image() {if (pixel != NULL) {delete [] pixel;}}
 
-int Image::getWidth() {return width;}
+int Image::getWidth() const {return width;}
 
-int Image::getHeight() {return height;}
+int Image::getHeight() const {return height;}
 
-Pixel *Image::getPixel() {return pixel;}
+const Pixel *Image::getPixel() const {return pixel;}
 
 void Image::setWidth(int w) {width = w;}
 
 void Image::setHeight(int h) {height = h;};
+
+void Image::setSource(Source *src){source = src;}
 
 void
 Image::setPixel(Pixel *px) {
@@ -53,20 +55,17 @@ Image::setPixel(Pixel *px) {
 void
 Image::ResetSize(int w, int h) {
 	// for combine blend and half functions 
-	if (pixel == NULL) {
+	if (pixel != NULL) {
+		delete [] pixel;
+	}
+	else {
 		width = w;
 		height = h;
 		pixel = new Pixel[w*h];
 	}
 }
 
-void
-Image::setSource(Source *src){
-	source = src;
-}
-
-void
-Image::Update(void) {
+void Image::Update(void) const {
 	if (source != NULL) {
 		source -> Update();
 	}
