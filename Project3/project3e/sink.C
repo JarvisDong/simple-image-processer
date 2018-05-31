@@ -1,5 +1,6 @@
 #include <sink.h>
 #include <image.h>
+#include <logging.h>
 #define NULL __null
 
 Sink::Sink(void) {
@@ -8,11 +9,11 @@ Sink::Sink(void) {
 }
 
 void
-Sink::SetInput(Image *img) {
+Sink::SetInput(const Image *img) {
     sink_image = img;
 }
 
 void
-Sink::SetInput2(Image *img) {
+Sink::SetInput2(const Image *img) {
     sink_image2 = img;
 }

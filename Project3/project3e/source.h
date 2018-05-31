@@ -13,6 +13,7 @@ protected:
 public:
 	virtual void Update(void) = 0;
 	Image* GetOutput();
+    virtual const char * SourceName() = 0;
 };
 
 #endif

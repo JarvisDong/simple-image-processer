@@ -6,9 +6,8 @@
 class PNMwriter : public Sink {
 public:
 	PNMwriter(void);
-
-public:
 	void Write(char *filename);
+	const char *SinkName();
 };
 
 #endif
