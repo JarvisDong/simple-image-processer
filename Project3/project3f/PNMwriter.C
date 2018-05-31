@@ -1,11 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <image.h>
+#include <PNMwriter.h>
+#include <iostream>
+
+using namespace std;
 
 PNMwriter::PNMwriter(void) {;}
 
 void
-PNMwriter::Write(const char *filename) {
+PNMwriter::Write(char *filename) {
 	if (sink_image == NULL) {
 		cerr << "no image to write!" << endl;
 		exit(EXIT_FAILURE);
@@ -26,5 +30,7 @@ PNMwriter::Write(const char *filename) {
 
 const char *
 PNMwriter::SinkName() {
-	
+	const char *msg;
+	msg = "PNMwriter";
+	return msg;
 }

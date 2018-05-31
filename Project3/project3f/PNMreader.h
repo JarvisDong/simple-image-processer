@@ -5,11 +5,12 @@
 #define PNMREADER_H
 class PNMreader : public Source {
 public:
-	PNMreader(char *f);
+	PNMreader(const char *f);
 	~PNMreader();
 	virtual void Execute();
 	virtual void Update();
-private:
+	const char * SourceName();
+protected:
 	char *filename;
 };
 #endif

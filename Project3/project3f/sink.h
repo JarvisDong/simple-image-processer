@@ -10,8 +10,8 @@ protected:
 	const Image *sink_image;
 	const Image *sink_image2;
 public:	
-	void SetInput(Image *img);
-	void SetInput2(Image *img);
+	void SetInput(const Image *img);
+	void SetInput2(const Image *img);
 	virtual const char * SinkName() = 0;
 };
 #endif

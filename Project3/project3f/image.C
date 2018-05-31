@@ -35,7 +35,7 @@ int Image::getWidth() const {return width;}
 
 int Image::getHeight() const {return height;}
 
-const Pixel *Image::getPixel() const {return pixel;}
+Pixel *Image::getPixel() const {return pixel;}
 
 void Image::setWidth(int w) {width = w;}
 
