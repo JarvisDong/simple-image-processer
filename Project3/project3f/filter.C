@@ -93,7 +93,7 @@ LRCombine::Execute() {
 		DataFlowException e(SinkName(), msg);
 		throw e;
 	}
-	//heights not equal
+//heights not equal
 	if (sink_image->getHeight() != sink_image2->getHeight()) {
         char msg[1024];
         sprintf(msg, "%s: heights must match: %d, %d\n", SinkName(), sink_image->getHeight(), sink_image2->getHeight());
@@ -120,33 +120,54 @@ LRCombine::Execute() {
 			}
 		}
 	}
-
 }
 
 
 void
 TBCombine::Execute() {
-	int sink_image_height = sink_image->getHeight();
-	int sink_image2_height = sink_image2->getHeight();
-	int sink_image_width = sink_image->getWidth();
-	int sink_image2_width = sink_image2->getWidth();
-
-	int source_image_width = sink_image2_width;
-	int source_image_height = sink_image_height + sink_image2_height;
-
-	source_image.ResetSize(source_image_width, source_image_height);
-	Pixel *source_image_pixel = source_image.getPixel();
-	Pixel *sink_image_pixel = sink_image->getPixel();
-	Pixel *sink_image2_pixel = sink_image2->getPixel();
-
-	for (int i = 0; i < source_image_width; i++) {
-		for (int j = 0; j < source_image_height - sink_image_height; j++) {
-			source_image_pixel[j*source_image_width+i] = sink_image_pixel[j*sink_image_width+i];
-		}
+	if (sink_image == NULL) {
+		char msg[1024];
+		sprintf(msg, "%s: no input1\n", SinkName());
+		DataFlowException e(SinkName(), msg);
+		throw e;
 	}
-	for (int i = 0; i < source_image_width; i++){
-		for (int j = sink_image_height; j < source_image_height; j++) {
-			source_image_pixel[j*source_image_width+i] = sink_image2_pixel[(j-source_image_height+sink_image_height)*sink_image2_width+i];
+
+	if (sink_image2 == NULL) {
+		char msg[1024];
+		sprintf(msg, "%s: no input2\n", SinkName());
+		DataFlowException e(SinkName(), msg);
+		throw e;
+	}
+//widths not same
+	if (sink_image->getWidth() != sink_image2->getWidth()) {
+        char msg[1024];
+        sprintf(msg, "%s: widths must match: %d, %d\n", SinkName(), sink_image->getHeight(), sink_image2->getHeight());
+        DataFlowException e(SinkName(), msg);
+        throw e;
+	}
+	else {
+		int sink_image_height = sink_image->getHeight();
+		int sink_image2_height = sink_image2->getHeight();
+		int sink_image_width = sink_image->getWidth();
+		int sink_image2_width = sink_image2->getWidth();
+
+		int source_image_width = sink_image2_width;
+		int source_image_height = sink_image_height + sink_image2_height;
+
+		source_image.ResetSize(source_image_width, source_image_height);
+		Pixel *source_image_pixel = source_image.getPixel();
+		Pixel *sink_image_pixel = sink_image->getPixel();
+		Pixel *sink_image2_pixel = sink_image2->getPixel();
+
+		for (int i = 0; i < source_image_width; i++) {
+			for (int j = 0; j < source_image_height - sink_image_height; j++) {
+				source_image_pixel[j*source_image_width+i] = sink_image_pixel[j*sink_image_width+i];
+			}
+		}
+		for (int i = 0; i < source_image_width; i++){
+			for (int j = sink_image_height; j < source_image_height; j++) {
+				source_image_pixel[j*source_image_width+i] = sink_image2_pixel[(j-source_image_height+sink_image_height)*sink_image2_width+i];
+			}
 		}
 	}
 }
@@ -160,23 +181,44 @@ Blender::SetFactor(double f) {
 
 void
 Blender::Execute() {
-	int sink_image_width = sink_image->getWidth();
-	int sink_image2_width = sink_image2->getWidth();
-	int sink_image_height = sink_image->getHeight();
+	if (sink_image == NULL) {
+		char msg[1024];
+		sprintf(msg, "%s: no input1\n", SinkName());
+		DataFlowException e(SinkName(), msg);
+		throw e;
+	}
 
-	int source_image_width = sink_image_width;
-	int source_image_height = sink_image_height;
-	source_image.ResetSize(source_image_width, source_image_height);
-	Pixel *source_image_pixel = source_image.getPixel();
-	Pixel *sink_image_pixel = sink_image->getPixel();
-	Pixel *sink_image2_pixel = sink_image2->getPixel();
+	if (sink_image2 == NULL) {
+		char msg[1024];
+		sprintf(msg, "%s: no input2\n", SinkName());
+		DataFlowException e(SinkName(), msg);
+		throw e;
+	}
 
+	if (factor > 1 || factor < 0) {
+		char msg[1024];
+		sprintf(msg, "%s: invalid factor\n", SinkName());
+		DataFlowException e(SinkName(), msg);
+		throw e;
+	}
+	else {
+		int sink_image_width = sink_image->getWidth();
+		int sink_image2_width = sink_image2->getWidth();
+		int sink_image_height = sink_image->getHeight();
 
-	for (int i = 0; i < source_image_width; i++) {
-		for (int j = 0; j < source_image_height; j++) {
-			source_image_pixel[j*source_image_width+i].r = (sink_image_pixel[j*sink_image_width+i].r)*factor + (sink_image2_pixel[j*sink_image2_width+i].r)*factor2;
-			source_image_pixel[j*source_image_width+i].g = (sink_image_pixel[j*sink_image_width+i].g)*factor + (sink_image2_pixel[j*sink_image2_width+i].g)*factor2;
-			source_image_pixel[j*source_image_width+i].b = (sink_image_pixel[j*sink_image_width+i].b)*factor + (sink_image2_pixel[j*sink_image2_width+i].b)*factor2;
+		int source_image_width = sink_image_width;
+		int source_image_height = sink_image_height;
+		source_image.ResetSize(source_image_width, source_image_height);
+		Pixel *source_image_pixel = source_image.getPixel();
+		Pixel *sink_image_pixel = sink_image->getPixel();
+		Pixel *sink_image2_pixel = sink_image2->getPixel();
+
+		for (int i = 0; i < source_image_width; i++) {
+			for (int j = 0; j < source_image_height; j++) {
+				source_image_pixel[j*source_image_width+i].r = (sink_image_pixel[j*sink_image_width+i].r)*factor + (sink_image2_pixel[j*sink_image2_width+i].r)*factor2;
+				source_image_pixel[j*source_image_width+i].g = (sink_image_pixel[j*sink_image_width+i].g)*factor + (sink_image2_pixel[j*sink_image2_width+i].g)*factor2;
+				source_image_pixel[j*source_image_width+i].b = (sink_image_pixel[j*sink_image_width+i].b)*factor + (sink_image2_pixel[j*sink_image2_width+i].b)*factor2;
+			}
 		}
 	}
 }

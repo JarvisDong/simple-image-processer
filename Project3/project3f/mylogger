@@ -1,5 +1,4 @@
-Begin execution 1
-Blender: about to update input1
+Begin execution 2Blender: about to update input1
 TBConcat: about to update input1
 LRConcat: about to update input1
 Shrinker: about to update input1
@@ -13,9 +12,20 @@ Shrinker: about to execute
 Shrinker: done executing
 LRConcat: done updating input1
 LRConcat: about to update input2
+Shrinker: about to update input1
 PNMreader: about to execute
 PNMreader: done executing
+Shrinker: done updating input1
+Shrinker: about to execute
+Shrinker: done executing
 LRConcat: done updating input2
 LRConcat: about to execute
-Throwing exception: (LRConcat): LRConcat: heights must match: 672, 1344
-: Caught exception in Execution1!
+LRConcat: done executing
+TBConcat: done updating input1
+TBConcat: about to update input2
+LRConcat: about to update input1
+Shrinker: about to update input1
+PNMreader: about to execute
+PNMreader: done executing
+Shrinker: done updating input1
+Shrinker: about to execute

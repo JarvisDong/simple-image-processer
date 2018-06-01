@@ -1,2 +1,2 @@
-./proj3F 3F_input.pnm out.pnm
-diff out.pnm 3F_out.pnm
+./proj3F 3F_input.pnm
+open mylogger

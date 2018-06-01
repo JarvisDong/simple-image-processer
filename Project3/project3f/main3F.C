@@ -206,21 +206,21 @@ void Execution4(char *filename)
 
 int main(int argc, char *argv[])
 {
-    Logger::LogEvent("Begin execution 1");
-    Execution1(argv[1]);
-    Logger::LogEvent("Done with execution 1");
+    // Logger::LogEvent("Begin execution 1");
+    // Execution1(argv[1]);
+    // Logger::LogEvent("Done with execution 1");
 
     Logger::LogEvent("Begin execution 2");
     Execution2(argv[1]);
     Logger::LogEvent("Done with execution 2");
 
-    Logger::LogEvent("Begin execution 3");
-    Execution3(argv[1]);
-    Logger::LogEvent("Done with execution 3");
+    // Logger::LogEvent("Begin execution 3");
+    // Execution3(argv[1]);
+    // Logger::LogEvent("Done with execution 3");
 
-    Logger::LogEvent("Begin execution 4");
-    Execution4(argv[1]);
-    Logger::LogEvent("Done with execution 4");
+    // Logger::LogEvent("Begin execution 4");
+    // Execution4(argv[1]);
+    // Logger::LogEvent("Done with execution 4");
 
     Logger::Finalize();
 }
