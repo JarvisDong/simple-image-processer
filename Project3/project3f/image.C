@@ -29,7 +29,7 @@ Image::Image(Image &img) {
 }
 
 //destructor
-Image::~Image() {if (pixel != NULL) {delete [] pixel;}}
+Image::~Image() {if (pixel != NULL) {delete [] pixel; pixel = NULL; }}
 
 int Image::getWidth() const {return width;}
 
@@ -58,11 +58,10 @@ Image::ResetSize(int w, int h) {
 	if (pixel != NULL) {
 		delete [] pixel;
 	}
-	else {
-		width = w;
-		height = h;
-		pixel = new Pixel[w*h];
-	}
+
+	width = w;
+	height = h;
+	pixel = new Pixel[w*h];
 }
 
 void Image::Update(void) const {

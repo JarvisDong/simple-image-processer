@@ -47,12 +47,12 @@ void Execution1(char *filename)
     }
     catch (DataFlowException &)
     {
-        Logger::LogEvent("Caught exception in Execution1!");
+        Logger::LogEvent("Caught exception in Execution1!\n");
         noException = false;
     }
     if (noException)
     {
-        Logger::LogEvent("No exception for Execution1!");
+        Logger::LogEvent("No exception for Execution1!\n");
     }
 }
 
@@ -95,12 +95,12 @@ void Execution2(char *filename)
     }
     catch (DataFlowException &)
     {
-        Logger::LogEvent("Caught exception in Execution2!");
+        Logger::LogEvent("Caught exception in Execution2!\n");
         noException = false;
     }
     if (noException)
     {
-        Logger::LogEvent("No exception for Execution2!");
+        Logger::LogEvent("No exception for Execution2!\n");
     }
 }
 
@@ -145,12 +145,12 @@ void Execution3(char *filename)
     }
     catch (DataFlowException &)
     {
-        Logger::LogEvent("Caught exception in Execution3!");
+        Logger::LogEvent("Caught exception in Execution3!\n");
         noException = false;
     }
     if (noException)
     {
-        Logger::LogEvent("No exception for Execution3!");
+        Logger::LogEvent("No exception for Execution3!\n");
     }
 }
 
@@ -195,32 +195,32 @@ void Execution4(char *filename)
     }
     catch (DataFlowException &)
     {
-        Logger::LogEvent("Caught exception in Execution4!");
+        Logger::LogEvent("Caught exception in Execution4!\n");
         noException = false;
     }
     if (noException)
     {
-        Logger::LogEvent("No exception for Execution4!");
+        Logger::LogEvent("No exception for Execution4!\n");
     }
 }
 
 int main(int argc, char *argv[])
 {
-    // Logger::LogEvent("Begin execution 1");
-    // Execution1(argv[1]);
-    // Logger::LogEvent("Done with execution 1");
+    Logger::LogEvent("Begin execution 1\n");
+    Execution1(argv[1]);
+    Logger::LogEvent("Done with execution 1\n");
 
-    Logger::LogEvent("Begin execution 2");
+    Logger::LogEvent("Begin execution 2\n");
     Execution2(argv[1]);
-    Logger::LogEvent("Done with execution 2");
+    Logger::LogEvent("Done with execution 2\n");
 
-    // Logger::LogEvent("Begin execution 3");
-    // Execution3(argv[1]);
-    // Logger::LogEvent("Done with execution 3");
+    Logger::LogEvent("Begin execution 3\n");
+    Execution3(argv[1]);
+    Logger::LogEvent("Done with execution 3\n");
 
-    // Logger::LogEvent("Begin execution 4");
-    // Execution4(argv[1]);
-    // Logger::LogEvent("Done with execution 4");
+    Logger::LogEvent("Begin execution 4\n");
+    Execution4(argv[1]);
+    Logger::LogEvent("Done with execution 4\n");
 
     Logger::Finalize();
 }

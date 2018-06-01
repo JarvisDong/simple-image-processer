@@ -1,6 +1,7 @@
 #include <PNMreader.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <logging.h>
 
 PNMreader::PNMreader(const char *f) {
@@ -15,6 +16,7 @@ PNMreader::PNMreader(const char *f) {
 
 PNMreader::~PNMreader() {
 	delete [] filename;
+	filename = NULL;
 }
 
 void

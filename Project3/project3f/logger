@@ -20,8 +20,6 @@ LRConcat: about to execute
 Throwing exception: (LRConcat): LRConcat: heights must match: 672, 1344
 Caught exception in Execution1!
 Done with execution 1
-
-
 Begin execution 2
 Blender: about to update input1
 TBConcat: about to update input1
@@ -77,8 +75,6 @@ LRConcat: about to execute
 Throwing exception: (LRConcat): LRConcat: no input2!
 Caught exception in Execution2!
 Done with execution 2
-
-
 Begin execution 3
 Blender: about to update input1
 TBConcat: about to update input1
@@ -172,8 +168,6 @@ Blender: about to execute
 Throwing exception: (Blender): Invalid factor for Blender: 1.200000
 Caught exception in Execution3!
 Done with execution 3
-
-
 Begin execution 4
 Blender: about to update input1
 TBConcat: about to update input1

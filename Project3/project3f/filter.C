@@ -197,7 +197,7 @@ Blender::Execute() {
 
 	if (factor > 1 || factor < 0) {
 		char msg[1024];
-		sprintf(msg, "%s: invalid factor\n", SinkName());
+		sprintf(msg, "%s: invalid factor for blender: %f\n", SinkName(), factor);
 		DataFlowException e(SinkName(), msg);
 		throw e;
 	}
