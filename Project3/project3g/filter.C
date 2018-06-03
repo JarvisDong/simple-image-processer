@@ -222,3 +222,216 @@ Blender::Execute() {
 		}
 	}
 }
+
+// 1) Mirror
+// 2) Rotate
+// 3) Subtract
+// 4) Grayscale
+// 5) Blur
+
+void
+Mirror::Execute() {
+	if (sink_image == NULL) {
+		char msg[1024];
+        sprintf(msg, "%s: no input1!\n", SinkName());
+        DataFlowException e(SinkName(), msg);
+        throw e;
+    }
+	else {
+	    int sink_image_width  = sink_image->getWidth();
+	    int sink_image_height  = sink_image->getHeight();
+	    Pixel * sink_image_pixel = sink_image->getPixel();
+
+	    source_image.ResetSize(sink_image_width, sink_image_height);
+
+	    Pixel *source_image_pixel = source_image.getPixel();
+
+	    for(int c = 0; c < sink_image_width; c++) {
+			for(int r = 0; r < sink_image_height; r++) {
+	            int index = r*sink_image_width + c;
+	            int index2 = r*sink_image_width + (sink_image_width - c) - 1;
+	            source_image_pixel[index] = sink_image_pixel[index2];
+			}
+		}
+	}
+}
+
+void
+Rotate::Execute() {
+	if (sink_image == NULL) {
+		char msg[1024];
+        sprintf(msg, "%s: no input1!\n", SinkName());
+        DataFlowException e(SinkName(), msg);
+        throw e;
+    }
+    else {
+	    int sink_image_width  = sink_image->getWidth();
+	    int sink_image_height  = sink_image->getHeight();
+	    Pixel * sink_image_pixel = sink_image->getPixel();
+
+	    source_image.ResetSize(sink_image_height, sink_image_width);
+
+	    int source_image_width = source_image.getWidth();
+	    int source_image_height = source_image.getHeight();
+	    Pixel *source_image_pixel = source_image.getPixel();
+
+	    for(int c = 0; c < source_image_width; c++) {
+			for(int r = 0; r < source_image_height; r++) {
+	            int index = r*source_image_width + source_image_width-c-1;
+	            int index2 =c*sink_image_width + r;
+ 	            source_image_pixel[index] = sink_image_pixel[index2];
+			}
+		}    	
+    }
+}
+
+void
+Subtract::Execute() {
+	if (sink_image == NULL) {
+		char msg[1024];
+        sprintf(msg, "%s: no input1!\n", SinkName());
+        DataFlowException e(SinkName(), msg);
+        throw e;
+    }
+    if (sink_image2 == NULL) {
+    	char msg[1024];
+    	sprintf(msg, "%s: no input2!\n", SinkName());
+        DataFlowException e(SinkName(), msg);
+        throw e;
+    }
+    else {
+	    int sink_image_width  = sink_image->getWidth();
+	    int sink_image_height  = sink_image->getHeight();
+	    Pixel * sink_image_pixel = sink_image->getPixel();
+
+	    int sink_image2_width  = sink_image2->getWidth();
+	    int sink_image2_height  = sink_image2->getHeight();
+	    Pixel * sink_image2_pixel = sink_image2->getPixel();
+
+	    //two input images have exactly the same dimensions
+	    source_image.ResetSize(sink_image_width, sink_image_height);
+
+	   	int source_image_width = source_image.getWidth();
+	    int source_image_height = source_image.getHeight();
+	    Pixel *source_image_pixel = source_image.getPixel();
+
+	    for(int c = 0; c < source_image_width; c++) {
+			for(int r = 0; r < source_image_height; r++) {
+	            int index = r*source_image_width + c;
+	            if (sink_image_pixel[index].r > sink_image2_pixel[index].r) {
+	            	source_image_pixel[index].r = sink_image_pixel[index].r - sink_image2_pixel[index].r;
+	            }
+	            else { source_image_pixel[index].r = 0; }
+
+	            if (sink_image_pixel[index].g > sink_image2_pixel[index].g) {
+	            	source_image_pixel[index].g = sink_image_pixel[index].g - sink_image2_pixel[index].g;
+	            }
+	            else { source_image_pixel[index].g = 0; }
+
+	            if (sink_image_pixel[index].b > sink_image2_pixel[index].b) {
+	            	source_image_pixel[index].b = sink_image_pixel[index].b - sink_image2_pixel[index].b;
+	            }
+	            else { source_image_pixel[index].b = 0; }
+			}
+		}    	
+    }
+}
+
+void
+Grayscale::Execute() {
+	if (sink_image == NULL) {
+		char msg[1024];
+        sprintf(msg, "%s: no input1!\n", SinkName());
+        DataFlowException e(SinkName(), msg);
+        throw e;
+    }
+    else {
+	    int sink_image_width  = sink_image->getWidth();
+	    int sink_image_height  = sink_image->getHeight();
+	    Pixel * sink_image_pixel = sink_image->getPixel();
+
+	    source_image.ResetSize(sink_image_width, sink_image_height);
+
+	    int source_image_width = source_image.getWidth();
+	    int source_image_height = source_image.getHeight();
+	    Pixel *source_image_pixel = source_image.getPixel();
+
+	    for(int c = 0; c < source_image_width; c++) {
+			for(int r = 0; r < source_image_height; r++) {
+	            int index = r*source_image_width + c;
+	            source_image_pixel[index].r = sink_image_pixel[index].r / 5 + sink_image_pixel[index].g / 2 + sink_image_pixel[index].b / 4;
+	            source_image_pixel[index].g = source_image_pixel[index].r;
+	            source_image_pixel[index].b = source_image_pixel[index].r;
+			}
+		}    	
+    }
+}
+
+void
+Blur::Execute() {
+	if (sink_image == NULL) {
+		char msg[1024];
+        sprintf(msg, "%s: no input1!\n", SinkName());
+        DataFlowException e(SinkName(), msg);
+        throw e;
+    }
+    else {
+	    int sink_image_width  = sink_image->getWidth();
+	    int sink_image_height  = sink_image->getHeight();
+	    Pixel * sink_image_pixel = sink_image->getPixel();
+
+	    source_image.ResetSize(sink_image_width, sink_image_height);
+
+	    int source_image_width = source_image.getWidth();
+	    int source_image_height = source_image.getHeight();
+	    Pixel *source_image_pixel = source_image.getPixel();
+
+	    for(int c = 0; c < source_image_width; c++) {
+			for(int r = 0; r < source_image_height; r++) {
+	            int index = r*source_image_width + c;
+	            int index1 = r*source_image_width + c + 1;
+	            int index2 = r*source_image_width + c - 1;
+	            int index3 = (r+1)*source_image_width + c;
+	            int index4 = (r+1)*source_image_width + c + 1;
+	            int index5 = (r+1)*source_image_width + c - 1;
+	            int index6 = (r-1)*source_image_width + c;
+	            int index7 = (r-1)*source_image_width + c + 1;
+	            int index8 = (r-1)*source_image_width + c - 1;
+	            if (c == 0 || r == 0 || c == source_image_width - 1 || r == source_image_height - 1) {
+	            	source_image_pixel[index] = sink_image_pixel[index];
+		        }
+		        else {
+		            source_image_pixel[index].r = 
+		            sink_image_pixel[index1].r/8 + 
+		            sink_image_pixel[index2].r/8 + 
+		            sink_image_pixel[index3].r/8 + 
+		            sink_image_pixel[index4].r/8 + 
+		            sink_image_pixel[index5].r/8 + 
+		            sink_image_pixel[index6].r/8 + 
+		            sink_image_pixel[index7].r/8 + 
+		            sink_image_pixel[index8].r/8;
+
+		            source_image_pixel[index].g = 
+		            sink_image_pixel[index1].g/8 + 
+		            sink_image_pixel[index2].g/8 + 
+		            sink_image_pixel[index3].g/8 + 
+		            sink_image_pixel[index4].g/8 + 
+		            sink_image_pixel[index5].g/8 + 
+		            sink_image_pixel[index6].g/8 + 
+		            sink_image_pixel[index7].g/8 + 
+		            sink_image_pixel[index8].g/8;
+
+		            source_image_pixel[index].b = 
+		            sink_image_pixel[index1].b/8 + 
+		            sink_image_pixel[index2].b/8 + 
+		            sink_image_pixel[index3].b/8 + 
+		            sink_image_pixel[index4].b/8 + 
+		            sink_image_pixel[index5].b/8 + 
+		            sink_image_pixel[index6].b/8 + 
+		            sink_image_pixel[index7].b/8 + 
+		            sink_image_pixel[index8].b/8;		        
+		        }
+			}
+		}    	
+    }
+}

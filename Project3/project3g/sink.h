@@ -15,3 +15,14 @@ public:
 	virtual const char * SinkName() = 0;
 };
 #endif
+
+#ifndef CHECKSUM_H
+#define CHECKSUM_H
+
+class CheckSum : public Sink {
+public:
+	const char *SinkName() { return "CheckSum"; }
+	void OutputCheckSum(const char *filename);
+};
+
+#endif

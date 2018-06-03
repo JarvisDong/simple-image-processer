@@ -1,6 +1,6 @@
 #include <PNMreader.h>
 #include <PNMwriter.h>
-#include <filter.h>
+#include <filters.h>
 
 int main(int argc, char *argv[])
 {

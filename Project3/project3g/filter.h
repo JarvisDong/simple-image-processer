@@ -55,3 +55,40 @@ public:
 	void Execute(void);
 };
 
+// add 5 new filters
+// 1) Mirror
+// 2) Rotate
+// 3) Subtract
+// 4) Grayscale
+// 5) Blur
+
+class Mirror : public SingleInputFilter {
+public:
+	const char *FilterName() {return "Mirror";}
+	void Execute();
+};
+
+class Rotate : public SingleInputFilter {
+public:
+	const char *FilterName() {return "Rotate";}
+	void Execute();
+};
+
+class Subtract : public DoubleInputFilter {
+public:
+	const char *FilterName() {return "Subtract";}
+	void Execute();
+};
+
+class Grayscale : public SingleInputFilter {
+public:
+	const char *FilterName() {return "Grayscale";}
+	void Execute();
+};
+
+class Blur : public SingleInputFilter {
+public:
+	const char *FilterName() {return "Blur";}
+	void Execute();
+};
+

@@ -29,9 +29,20 @@ int main(int argc, char *argv[])
     /* ================================ */
 
     /* you may want one or more readers! */
-    PNMreader reader("../images/puddles.pnm");  // note: filename must be "../images/image_name.pnm"
+    PNMreader reader("../images/hank.pnm");  // note: filename must be "../images/image_name.pnm"
 
     Shrinker s;  // this test should cause an exception
+    Grayscale g;
+    Mirror m;
+    LRCombine lr;
+    TBCombine tb;
+    Rotate r;
+
+    // start to mess up Hank
+    r.SetInput(reader.GetOutput());
+    m.SetInput(r.GetOutput());
+    lr.
+
 
     /* make "finalImage" be the image at the bottom of your pipeline */
     /* the code below will call update on finalImage                 */
