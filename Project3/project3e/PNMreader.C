@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-PNMreader::PNMreader(const char *f) {
+PNMreader::PNMreader(char *f) {
 	// make a string copy
 	filename = new char[strlen(f)+1];
 	int len = strlen(f);

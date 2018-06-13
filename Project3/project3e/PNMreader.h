@@ -5,7 +5,7 @@
 #define PNMREADER_H
 class PNMreader : public Source {
 public:
-	PNMreader(const char *f);
+	PNMreader(char *f);
 	~PNMreader();
 	virtual void Execute();
 	virtual void Update();
