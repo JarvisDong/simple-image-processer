@@ -5,11 +5,7 @@
 PNMreader::PNMreader(char *f) {
 	// make a string copy
 	filename = new char[strlen(f)+1];
-	int len = strlen(f);
-	for (int i=0; i<len; i++) {
-		filename[i] = f[i];
-	}
-	filename[len] = '\0';
+	strcpy(filename, f);
 }
 
 PNMreader::~PNMreader() {
