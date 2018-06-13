@@ -5,12 +5,13 @@ void
 Filter::Update() {
 	if (sink_image != NULL) {
 		sink_image->Update();
-		Execute();
 	}
-	if (sink_image2 != NULL) {
-		sink_image2->Update();
-		Execute();
+	if (GetNumberofInputs() == 2) {
+		if (sink_image2 != NULL) {
+			sink_image2->Update();
+		}
 	}
+	Execute();
 }
 
 Shrinker::Shrinker(void) {;}

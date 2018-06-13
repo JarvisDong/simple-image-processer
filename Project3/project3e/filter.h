@@ -6,13 +6,34 @@
 #define FILTER_H
 class Filter : public Sink, public Source {
 	void Update(void);
+public:
+	virtual int GetNumberofInputs() {return 0;}
+};
+#endif
+
+
+#ifndef SIF_H
+#define SIF_H
+class SingleInputFiler: public Filter
+{
+    public:
+        virtual int GetNumberofInputs() {return 1;}
+};
+#endif 
+
+#ifndef DIF_H
+#define DIF_H
+class DoubleInputFiler: public Filter
+{
+    public:
+        virtual int GetNumberofInputs() {return 2;}
 };
 #endif
 
 
 #ifndef SHRINKER_H
 #define SHRINKER_H
-class Shrinker : public Filter {
+class Shrinker : public SingleInputFiler {
 public:
 	Shrinker(void);
 	void Execute(void);
@@ -21,7 +42,7 @@ public:
 
 #ifndef LRCOMBINE_H
 #define LRCOMBINE_H
-class LRCombine : public Filter {
+class LRCombine : public DoubleInputFiler {
 public:
 	LRCombine(void);
 	void Execute(void);
@@ -30,7 +51,7 @@ public:
 
 #ifndef TBCOMBINE_H
 #define TBCOMBINE_H
-class TBCombine : public Filter {
+class TBCombine : public DoubleInputFiler {
 public:
 	TBCombine(void);
 	void Execute(void);
@@ -40,7 +61,7 @@ public:
 
 #ifndef BLENDER_H
 #define BLENDER_H
-class Blender : public Filter
+class Blender : public DoubleInputFiler
 {
 public:
 	Blender();
