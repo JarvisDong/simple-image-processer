@@ -1,0 +1,342 @@
+Skipping acorso (got a pass previously)
+Running adalcher...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for adalcher
+You have: CHECKSUM: 199, 224, 177
+But master has: CHECKSUM: 126, 13, 205
+Skipping amalynur (got a pass previously)
+Running andy1...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Could not find checksum or exception .. crash?
+Skipping andy2 (got a pass previously)
+Running andy3...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Could not find checksum or exception .. crash?
+Skipping andy4 (got a pass previously)
+Running andy5...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Could not find checksum or exception .. crash?
+Skipping andy7 (got a pass previously)
+Skipping aschnab2 (got a pass previously)
+Skipping belan (got a pass previously)
+Skipping bheng (got a pass previously)
+Skipping blindsey (got a pass previously)
+Skipping bludwin (got a pass previously)
+Running bmerril2...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for bmerril2
+You have: CHECKSUM: 24, 93, 23
+But master has: Skipping bveber (got a pass previously)
+Running cconklin...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for cconklin
+You have: CHECKSUM: 202, 112, 125
+But master has: Running cmisa...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for cmisa
+You have: CHECKSUM: 212, 249, 39
+But master has: CHECKSUM: 76, 174, 4
+Skipping cphillip (got a pass previously)
+Skipping cplachno (got a pass previously)
+Skipping cpotter3 (got a pass previously)
+Skipping crestonw (got a pass previously)
+Running cseverso...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for cseverso
+You have: CHECKSUM: 135, 197, 18
+But master has: CHECKSUM: 248, 72, 8
+Skipping danielv (got a pass previously)
+Skipping dbeeman (got a pass previously)
+Running dloyd2...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Could not find checksum or exception .. crash?
+Skipping dpugh (got a pass previously)
+Running elopezr2_1...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for elopezr2_1
+You have: CHECKSUM: 208, 198, 93
+But master has: CHECKSUM: 161, 159, 165
+Skipping elopezr2_2 (got a pass previously)
+Running emilywu...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for emilywu
+You have: CHECKSUM: 92, 103, 140
+But master has: CHECKSUM: 128, 107, 186
+Skipping esteing2 (got a pass previously)
+Skipping ezwovic1 (got a pass previously)
+Running ezwovic4...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Could not find checksum or exception .. crash?
+Skipping ezwovic5 (got a pass previously)
+Skipping fangjian (got a pass previously)
+Running fsmith...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Pass for fsmith
+Skipping hank1 (got a pass previously)
+Skipping hank2 (got a pass previously)
+Skipping haojund (got a pass previously)
+Running hhardin...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for hhardin
+You have: CHECKSUM: 183, 189, 175
+But master has: CHECKSUM: 137, 248, 172
+Running hjo...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for hjo
+You have: CHECKSUM: 36, 35, 108
+But master has: CHECKSUM: 56, 72, 80
+Skipping idnum2 (got a pass previously)
+Skipping jamiez (got a pass previously)
+Skipping jbeder (got a pass previously)
+Skipping jfujii (got a pass previously)
+Skipping jhill12 (got a pass previously)
+Skipping jml (got a pass previously)
+Skipping joeg (got a pass previously)
+Skipping jrodrig2 (got a pass previously)
+Running kaelas...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Pass for kaelas
+Skipping khawks (got a pass previously)
+Skipping kliang (got a pass previously)
+Skipping kporter (got a pass previously)
+Running linshuh...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for linshuh
+You have: CHECKSUM: 2, 31, 82
+But master has: CHECKSUM: 183, 227, 20
+Skipping lli6 (got a pass previously)
+Skipping lpoole3 (got a pass previously)
+Skipping mbriones (got a pass previously)
+Skipping mhernan7 (got a pass previously)
+Skipping mlogan (got a pass previously)
+Skipping nbonat (got a pass previously)
+Running nel...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for nel
+You produced a valid image and a checksum, but master produced an exception
+Skipping nletz (got a pass previously)
+Skipping nolan1 (got a pass previously)
+Skipping ntandows (got a pass previously)
+Skipping palmerh (got a pass previously)
+Skipping plin6 (got a pass previously)
+Running plooi...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Could not find checksum or exception .. crash?
+Skipping qfeng (got a pass previously)
+Skipping refealy (got a pass previously)
+Skipping sbattan (got a pass previously)
+Running sig...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for sig
+You have: CHECKSUM: 234, 176, 80
+But master has: CHECKSUM: 116, 144, 48
+Running slandver...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for slandver
+You have: CHECKSUM: 164, 158, 205
+But master has: Skipping ssvindla (got a pass previously)
+Skipping tcheng6 (got a pass previously)
+Skipping tenright (got a pass previously)
+Skipping tmadden (got a pass previously)
+Skipping tquatrar (got a pass previously)
+Running vburn...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for vburn
+You have: CHECKSUM: 138, 35, 39
+But master has: CHECKSUM: 16, 34, 113
+Skipping vinithag (got a pass previously)
+Skipping vuv (got a pass previously)
+Running xueranm...
+g++  -g -I. -c stress_test.C
+g++  -g -I. -c image.C
+g++  -g -I. -c sink.C
+g++  -g -I. -c source.C
+g++  -g -I. -c PNMreader.C
+g++  -g -I. -c PNMwriter.C
+g++  -g -I. -c filter.C
+g++  -g -I. -c logging.C
+g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
+Mismatch for xueranm
+You have: CHECKSUM: 194, 107, 118
+But master has: CHECKSUM: 4, 132, 218
+Skipping ybl (got a pass previously)
+Skipping yyu3 (got a pass previously)
+Skipping yzhao8 (got a pass previously)
+Skipping zchen (got a pass previously)
+You have passed       64 out of       85 tests.
