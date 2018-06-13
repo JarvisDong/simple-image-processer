@@ -1,5 +1,5 @@
 #include <filter.h>
-#include <iostream>
+#define NULL __null
 
 void
 Filter::Update() {
