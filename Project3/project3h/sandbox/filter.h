@@ -4,11 +4,16 @@
 
 class Filter : public Sink, public Source {
 public:
+	Filter();
+	void SetInput(const Image * img) { latest = false; Sink::SetInput(img); }
+	void SetInput2(const Image * img) { latest = false; Sink::SetInput2(img); }
     virtual const char * FilterName() = 0;
     virtual const char * SourceName() { return FilterName(); };
     virtual const char * SinkName() { return FilterName(); };
     virtual int GetNumberofInputs() {return 0;};
     void Update();
+protected:
+	bool latest; 
 };
 
 #ifndef SIF_H

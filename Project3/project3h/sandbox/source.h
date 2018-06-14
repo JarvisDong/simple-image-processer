@@ -27,7 +27,6 @@ public:
 	const char *SourceName() {return "Color";}
 	void Execute();
 	virtual void Update();
-	Color();
 	Color(int w, int h, unsigned char r, unsigned char g, unsigned char b);
 protected:
 	int width, height;
