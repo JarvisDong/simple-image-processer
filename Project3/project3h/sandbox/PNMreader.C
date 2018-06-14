@@ -26,7 +26,10 @@ PNMreader::Execute() {
 	FILE *f_in = fopen(filename, "r");
 
 	if (f_in == NULL) {
+		char msg[1024];
 		fprintf(stderr, "CANNOT open file %s\n", this->filename);
+		DataFlowException e(filename, msg);
+        throw e;
 	}
 
 	fscanf(f_in, "%s\n%d %d\n%d\n", magicNum, &w, &h, &maxval);
@@ -50,10 +53,3 @@ void PNMreader::Update() {
     sprintf(msg, "%s: done executing\n", SourceName());
     Logger::LogEvent(msg);
 }
-
-const char * PNMreader::SourceName() {
-	const char *msg;
-	msg = "PNMreader";
-	return msg;
-}
-

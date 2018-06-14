@@ -1,1 +1,1 @@
-../xueranm/stress_test.C
+../aarcher/stress_test.C

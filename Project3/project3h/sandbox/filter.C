@@ -24,14 +24,17 @@ Filter::Update() {
 	// 	exit(EXIT_FAILURE);
 	// }
 
-	if (sink_image2 != NULL) {
-	    char msg[128];
-        sprintf(msg, "%s: about to update input2\n", SourceName());
-        Logger::LogEvent(msg);
-        sink_image2->Update();
-        sprintf(msg, "%s: done updating input2\n", SourceName());
-        Logger::LogEvent(msg);
+	if (GetNumberofInputs() == 2) {
+		if (sink_image2 != NULL) {
+		    char msg[128];
+	        sprintf(msg, "%s: about to update input2\n", SourceName());
+	        Logger::LogEvent(msg);
+	        sink_image2->Update();
+	        sprintf(msg, "%s: done updating input2\n", SourceName());
+	        Logger::LogEvent(msg);
+		}
 	}
+
 	// else {
 	// 	cerr << "no input2 to filter" << endl;
 	// 	exit(EXIT_FAILURE);
@@ -46,12 +49,6 @@ Filter::Update() {
     sprintf(msg, "%s: done executing\n", SourceName());
     Logger::LogEvent(msg);
 }
-
-const char * Filter::SourceName() {return FilterName();}
-
-const char * Filter::SinkName() {return FilterName();}
-
-
 
 void
 Shrinker::Execute() {

@@ -10,7 +10,7 @@ g++  -g -I. -c filter.C
 g++  -g -I. -c logging.C
 g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
 Mismatch for adalcher
-You have: CHECKSUM: 199, 224, 177
+You have: CHECKSUM: 192, 238, 232
 But master has: CHECKSUM: 126, 13, 205
 Skipping amalynur (got a pass previously)
 Running andy1...
@@ -107,7 +107,7 @@ g++  -g -I. -c filter.C
 g++  -g -I. -c logging.C
 g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
 Mismatch for cseverso
-You have: CHECKSUM: 135, 197, 18
+You have: CHECKSUM: 37, 112, 191
 But master has: CHECKSUM: 248, 72, 8
 Skipping danielv (got a pass previously)
 Skipping dbeeman (got a pass previously)
@@ -148,7 +148,7 @@ g++  -g -I. -c filter.C
 g++  -g -I. -c logging.C
 g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
 Mismatch for emilywu
-You have: CHECKSUM: 92, 103, 140
+You have: CHECKSUM: 160, 211, 248
 But master has: CHECKSUM: 128, 107, 186
 Skipping esteing2 (got a pass previously)
 Skipping ezwovic1 (got a pass previously)
@@ -162,20 +162,12 @@ g++  -g -I. -c PNMwriter.C
 g++  -g -I. -c filter.C
 g++  -g -I. -c logging.C
 g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
-Could not find checksum or exception .. crash?
+Mismatch for ezwovic4
+You have: CHECKSUM: 207, 4, 178
+But master has: CHECKSUM: 70, 91, 237
 Skipping ezwovic5 (got a pass previously)
 Skipping fangjian (got a pass previously)
-Running fsmith...
-g++  -g -I. -c stress_test.C
-g++  -g -I. -c image.C
-g++  -g -I. -c sink.C
-g++  -g -I. -c source.C
-g++  -g -I. -c PNMreader.C
-g++  -g -I. -c PNMwriter.C
-g++  -g -I. -c filter.C
-g++  -g -I. -c logging.C
-g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
-Pass for fsmith
+Skipping fsmith (got a pass previously)
 Skipping hank1 (got a pass previously)
 Skipping hank2 (got a pass previously)
 Skipping haojund (got a pass previously)
@@ -203,7 +195,7 @@ g++  -g -I. -c filter.C
 g++  -g -I. -c logging.C
 g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
 Mismatch for hjo
-You have: CHECKSUM: 36, 35, 108
+You have: CHECKSUM: 69, 178, 229
 But master has: CHECKSUM: 56, 72, 80
 Skipping idnum2 (got a pass previously)
 Skipping jamiez (got a pass previously)
@@ -213,17 +205,7 @@ Skipping jhill12 (got a pass previously)
 Skipping jml (got a pass previously)
 Skipping joeg (got a pass previously)
 Skipping jrodrig2 (got a pass previously)
-Running kaelas...
-g++  -g -I. -c stress_test.C
-g++  -g -I. -c image.C
-g++  -g -I. -c sink.C
-g++  -g -I. -c source.C
-g++  -g -I. -c PNMreader.C
-g++  -g -I. -c PNMwriter.C
-g++  -g -I. -c filter.C
-g++  -g -I. -c logging.C
-g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
-Pass for kaelas
+Skipping kaelas (got a pass previously)
 Skipping khawks (got a pass previously)
 Skipping kliang (got a pass previously)
 Skipping kporter (got a pass previously)
@@ -333,7 +315,7 @@ g++  -g -I. -c filter.C
 g++  -g -I. -c logging.C
 g++ stress_test.o image.o sink.o source.o PNMreader.o PNMwriter.o filter.o logging.o -o stress_test
 Mismatch for xueranm
-You have: CHECKSUM: 194, 107, 118
+You have: CHECKSUM: 2, 88, 115
 But master has: CHECKSUM: 4, 132, 218
 Skipping ybl (got a pass previously)
 Skipping yyu3 (got a pass previously)

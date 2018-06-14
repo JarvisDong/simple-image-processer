@@ -10,7 +10,7 @@ public:
 	~PNMreader();
 	virtual void Execute();
 	virtual void Update();
-	const char * SourceName();
+	const char * SourceName() { return "PNMreader"; }
 protected:
 	char *filename;
 };
