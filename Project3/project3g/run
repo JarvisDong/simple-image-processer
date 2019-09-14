@@ -1,3 +1,0 @@
-./proj3G 3G_input.pnm out.pnm
-pnmtopng < out.pnm > out.png
-open out.png

@@ -1,2 +1,0 @@
-./proj3C 3B_input.pnm out.pnm
-diff 3B_out.pnm out.pnm 

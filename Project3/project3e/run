@@ -1,3 +1,0 @@
-./proj3E 3E_input.pnm out.pnm
-pnmtopng out.pnm > out.png
-diff 3E_out.pnm out.pnm
